@@ -87,7 +87,7 @@
   const yes=document.getElementById("yes"), no=document.getElementById("no");
   function nope(){
     no.textContent = noLines[Math.min(n,noLines.length-1)]; n++;
-    yes.style.fontSize = Math.min(2.6, 1.1 + n*0.22) + "rem";   // Yes grows (capped)
+    yes.style.fontSize = (1.1 + n*0.28) + "rem";               // Yes keeps growing 📈
     no.style.fontSize = Math.max(0.72, 1 - n*0.04) + "rem";     // No shrinks a touch
     no.style.transform = `rotate(${(Math.random()*16-8)}deg)`;  // little wobble in place
     document.getElementById("hint").textContent = n>3 ? "(the No button is getting nervous…)" : "pick something you fancy 👇";
