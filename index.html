@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>A little question for my cute Loduuu 🎬</title>
+<title>A little question for Ruchi 🎬</title>
 <style>
   :root{ --rose:#ff8fab; --deep:#c65e83; --plum:#6b3e5e; --cream:#fff7f2; }
   *{ box-sizing:border-box; }
@@ -87,18 +87,21 @@
   const yes=document.getElementById("yes"), no=document.getElementById("no");
   function nope(){
     no.textContent = noLines[Math.min(n,noLines.length-1)]; n++;
-    yes.style.fontSize = (1.1 + n*0.28) + "rem";           // Yes keeps growing
-    no.style.fontSize = Math.max(0.7, 1 - n*0.05) + "rem"; // No shrinks a touch
-    no.style.transform = `rotate(${(Math.random()*16-8)}deg)`; // little wobble
+    yes.style.fontSize = Math.min(2.6, 1.1 + n*0.22) + "rem";   // Yes grows (capped)
+    no.style.fontSize = Math.max(0.72, 1 - n*0.04) + "rem";     // No shrinks a touch
+    no.style.transform = `rotate(${(Math.random()*16-8)}deg)`;  // little wobble in place
     document.getElementById("hint").textContent = n>3 ? "(the No button is getting nervous…)" : "pick something you fancy 👇";
   }
 
   function yay(){
+    // ✏️ EDIT THIS LINE — your secret message to Loduuuuuu:
+    const secretNote = "p.s. you're my favourite person to do nothing with 🤍";
     const movie = pick ? `We're watching “${pick}” 🎥` : "You choose the movie, I'll bring the snacks 🍫";
     document.querySelector(".card").innerHTML =
       `<div style="font-size:3rem">🥳💖</div>
        <h1>Yayyy! It's a date tonight!</h1>
        <p class="sub" style="font-size:1.05rem">${movie}</p>
+       <p style="color:#c65e83;font-style:italic;margin:14px 0 4px">${secretNote}</p>
        <div style="font-size:2rem">🌷🧸🌷</div>`;
     for(let i=0;i<26;i++){
       const h=document.createElement("div"); h.className="heart";
